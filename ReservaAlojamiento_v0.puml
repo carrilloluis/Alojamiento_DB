@@ -1,0 +1,27 @@
+@startuml Hotel
+	skin rose
+	hide circle
+	hide empty members
+	entity Cliente {
+		* id_cliente : INTEGER
+		nombre : VARCHAR
+		correo electrónico : VARCHAR
+		teléfono : VARCHAR
+	}
+	entity Habitación {
+		*id_habitacion : INTEGER
+		número habitación VARCHAR
+		tipo : ENUM
+		precio por noche : DECIMAL 10, 2
+	}
+	entity Reserva {
+		*id_reserva : INTEGER 
+		id_cliente : INTEGER 
+		id_habitacion : INTEGER 
+		fecha entrada : DATE 'Check In
+		fecha salida : DATE 'Check Out
+	}
+
+	Reserva }|-r-|{ Habitación
+	Reserva }|-l-|{ Cliente
+@enduml
