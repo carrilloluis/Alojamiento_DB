@@ -1,0 +1,52 @@
+@startuml ReservaHostal
+	entity Empleado {
+		*id : INTEGER
+		nombres : VARCHAR
+		apellidos : VARCHAR
+		correo_electrónico : VARCHAR
+	}
+
+	entity Hostal {
+		*id : INTEGER 
+		denominación : VARCHAR
+		dirección : VARCHAR
+	}
+
+	entity TipoHabitación {
+		*id : INTEGER
+		descripción : VARCHAR
+	}
+
+	entity Habitación {
+		*id : INTEGER
+		id_hostal : INTEGER
+		id_tipo_habitación : INTEGER
+		descripción : VARCHAR
+	}
+
+	entity Cliente {
+		*id : INTEGER
+		nombres : VARCHAR
+		apellidos : VARCHAR
+		correo_electrónico : VARCHAR
+	}
+
+	entity ReservaHabitación {
+		*id : INTEGER
+		id_habitación : INTEGER
+		id_cliente : INTEGER
+		fecha_de_reserva : DATETIME
+		fecha_de_ingreso : DATETIME
+		fecha_de_salida : DATETIME
+		días : INTEGER
+	}
+
+	entity Pago {
+		*id : INTEGER
+		id_reserva : INTEGER
+		id_cliente : INTEGER
+		servicio : INTEGER
+		monto : NUMERIC
+		estado : INTEGER
+	}
+@enduml
